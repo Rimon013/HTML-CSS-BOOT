@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 draggable="true" id="call"></h3>
+    <button type="button" onclick="myposition()">loc</button>
+    <script>
+        var h = document.getElementById("call");
+        function myposition(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(loca);
+            }
+        }
+        function loca(position){
+            h.innerHTML="long:" +position.coords.longitude;
+        }
+    </script>
+</body>
+</html>
